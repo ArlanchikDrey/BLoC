@@ -1,15 +1,5 @@
+import 'package:bloc_pattern/repository/Repository.dart';
+import 'package:bloc_pattern/view/UserBlocScreen.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-      Directionality(
-        textDirection: TextDirection.ltr,
-        child: Center(child: MyStatelessWidget()),
-      ),
-    );
-
-class MyStatelessWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text('Hello!');
-  }
-}
+void main() => runApp(UserBlocScreen(Repository()));
