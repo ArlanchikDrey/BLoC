@@ -1,3 +1,4 @@
+import 'package:bloc_pattern/widgets/moredetails/DetailWidget.dart';
 import 'package:bloc_pattern/widgets/stateful/MyStatefulWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,11 @@ class BodyWidget extends StatelessWidget{
     }
   }
 
+  void _showDetails(BuildContext context){
+    var route = MaterialPageRoute(builder: (context) => DetailWidget());
+    Navigator.push(context, route);
+  }
+
   String _setUrlPhoto(){
     return "https://avatars.mds.yandex.net/get-pdb/2018622/72a562de-8809-408e-ab4f-8454b250768c/s1200?webp=false";
   }
@@ -26,7 +32,7 @@ class BodyWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.0,
+      height: 150.0,
       child: Row(
         children: <Widget>[
           Image.network(
@@ -49,6 +55,14 @@ class BodyWidget extends StatelessWidget{
                       child: Text(_btnName),
                       color: Colors.red,
                       textColor: Colors.white,
+                    ),
+                    FlatButton(
+                      onPressed: () {
+                        _showDetails(context);
+                      },
+                      child: Text("Открыть второе окно"),
+                      color: Colors.white,
+                      textColor: Colors.blue,
                     )
                  ],
                 )

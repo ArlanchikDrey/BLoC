@@ -1,4 +1,4 @@
-import 'package:bloc_pattern/widgets/openurlwidget/BodyWidget.dart';
+import 'package:bloc_pattern/widgets/listview/MyList.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -7,7 +7,7 @@ void main() => runApp(MaterialApp(
     appBar: AppBar(
       title: Text("Title")
     ),
-    body: BodyWidget("Open site","Message One", messageTwo: "MessageTwo")
+    body: MyList(),
   )
 ));
 
