@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class MyStatefulWidget extends StatefulWidget{
-  @override
-  createState() => MyWidgetState(_getCount());
+
+  MyWidgetState widgetState;
 
   int _getCount() => 0;
 
-}
+  int getCount() => widgetState.getCounts();
+
+  @override
+  State<StatefulWidget> createState() {
+    widgetState = MyWidgetState(_getCount());
+    return widgetState;
+  }}
 
 class MyWidgetState extends State<MyStatefulWidget>{
   int _count;
@@ -18,6 +24,9 @@ class MyWidgetState extends State<MyStatefulWidget>{
       _count++;
     });
   }
+
+  int getCounts() => _count;
+
   @override
   Widget build(BuildContext context) {
     return Row(

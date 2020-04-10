@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DetailWidget extends StatelessWidget{
+  String _counts;
+
+  DetailWidget({String counts}): _counts = counts; 
+
   void _close(BuildContext context){
     Navigator.pop(context);
   }
@@ -9,12 +13,18 @@ class DetailWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
-         title: Text("Details")
+         title: Text("Detail $_counts")
          ),
-       body: RaisedButton(
-         onPressed: () {_close(context);},
-         child: Text("Назад"),
-         ),
+       body: Center(
+         child: Column(
+           children: <Widget>[
+              RaisedButton(
+                onPressed: () {_close(context);},
+                child: Text("Назад"),
+              )
+           ],
+         )
+       )
     );
   }
 

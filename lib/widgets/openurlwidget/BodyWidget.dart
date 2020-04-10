@@ -1,4 +1,3 @@
-import 'package:bloc_pattern/widgets/moredetails/DetailWidget.dart';
 import 'package:bloc_pattern/widgets/stateful/MyStatefulWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +7,11 @@ class BodyWidget extends StatelessWidget{
   String _btnName;
   final String _messageOne;
   String _messageTwo;
+  MyStatefulWidget _myStatefulWidget;
+
   BodyWidget(this._btnName, this._messageOne, {String messageTwo}){
       this._messageTwo = messageTwo;
+      _myStatefulWidget = MyStatefulWidget();
   }
 
   void _openUrl(String url) async {
@@ -20,9 +22,10 @@ class BodyWidget extends StatelessWidget{
     }
   }
 
-  void _showDetails(BuildContext context){
-    var route = MaterialPageRoute(builder: (context) => DetailWidget());
-    Navigator.push(context, route);
+  void _showDetails(BuildContext context, int counts){
+    //var route = MaterialPageRoute(builder: (context) => DetailWidget());
+    //Navigator.push(context, route);
+    Navigator.pushNamed(context, '/second/$counts');
   }
 
   String _setUrlPhoto(){
@@ -58,7 +61,7 @@ class BodyWidget extends StatelessWidget{
                     ),
                     FlatButton(
                       onPressed: () {
-                        _showDetails(context);
+                        _showDetails(context,_myStatefulWidget.getCount());
                       },
                       child: Text("Открыть второе окно"),
                       color: Colors.white,
@@ -68,7 +71,7 @@ class BodyWidget extends StatelessWidget{
                 )
               ),
           )),
-          MyStatefulWidget()
+          _myStatefulWidget
         ],
       )
     );

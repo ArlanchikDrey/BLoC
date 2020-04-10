@@ -13,8 +13,13 @@ class MyList extends StatelessWidget{
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: _myList
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Title")
+      ),
+      body: ListView(
+        children: _myList
+      )
     );
   }
 }
