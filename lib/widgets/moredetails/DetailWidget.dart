@@ -1,3 +1,4 @@
+import 'package:bloc_pattern/widgets/moredetails/GetUsers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class DetailWidget extends StatelessWidget{
        body: Center(
          child: Column(
            children: <Widget>[
+              GetUsers(),
               RaisedButton(
                 onPressed: () {_close(context);},
                 child: Text("Назад"),
