@@ -25,6 +25,7 @@ class UserState extends State<GetUsers> with TickerProviderStateMixin{
   void _updateText(){
     setState(() {
       _response = "click numbers: ${_i++}";
+      _controller.reset();
     });
   }
 

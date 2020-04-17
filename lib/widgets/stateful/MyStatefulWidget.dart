@@ -8,6 +8,10 @@ class MyStatefulWidget extends StatefulWidget{
 
   int getCount() => widgetState.getCounts();
 
+  String setCountsFromDetail(String countsFromDetail){
+    widgetState.setCountsFromDetail(countsFromDetail);
+  }
+  
   @override
   State<StatefulWidget> createState() {
     widgetState = MyWidgetState(_getCount());
@@ -16,6 +20,7 @@ class MyStatefulWidget extends StatefulWidget{
 
 class MyWidgetState extends State<MyStatefulWidget>{
   int _count;
+  String _countsFromDetail = "0";
 
   MyWidgetState(this._count);
 
@@ -25,13 +30,17 @@ class MyWidgetState extends State<MyStatefulWidget>{
     });
   }
 
+  String setCountsFromDetail(String countsFromDetail){
+    this._countsFromDetail = countsFromDetail;
+  }
+
   int getCounts() => _count;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Text("Counts: $_count"),
+        Text("Counts: $_count $_countsFromDetail"),
         IconButton(
           icon: Icon(Icons.star,size: 35.0,color: Colors.blue,), 
           onPressed: countChange)

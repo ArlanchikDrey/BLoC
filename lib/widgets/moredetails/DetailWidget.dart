@@ -8,7 +8,7 @@ class DetailWidget extends StatelessWidget{
   DetailWidget({String counts}): _counts = counts; 
 
   void _close(BuildContext context){
-    Navigator.pop(context);
+    Navigator.pop(context,_counts);
   }
   @override
   Widget build(BuildContext context) {
