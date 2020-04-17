@@ -23,10 +23,7 @@ class BodyWidget extends StatelessWidget{
   }
 
   void _showDetails(BuildContext context, int counts){
-    //var route = MaterialPageRoute(builder: (context) => DetailWidget());
-    //Navigator.push(context, route);
     Navigator.pushNamed(context,'/second/$counts');
-    //_myStatefulWidget.setCountsFromDetail(_countsFromDetail);
   }
 
   String _setUrlPhoto(){

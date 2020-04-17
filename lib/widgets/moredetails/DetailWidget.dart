@@ -20,6 +20,14 @@ class DetailWidget extends StatelessWidget{
          child: Column(
            children: <Widget>[
               GetUsers(),
+              FlatButton(
+                onPressed: () {
+                  Navigator.pushNamed(context,'/third');  
+                },
+                child: Text("Открыть третье окно"),
+                color: Colors.white,
+                textColor: Colors.blue,
+              ),
               RaisedButton(
                 onPressed: () {_close(context);},
                 child: Text("Назад"),
