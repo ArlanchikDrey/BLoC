@@ -14,7 +14,6 @@ class GetPostsState extends State<GetPosts>{
   @override
   void initState() {
     _loadData();
-    _respose = "started";
     super.initState();
   }
 

@@ -26,6 +26,10 @@ class BodyWidget extends StatelessWidget{
     Navigator.pushNamed(context,'/second/$counts');
   }
 
+  void _showMoreAbout(BuildContext context){
+    Navigator.pushNamed(context,'/fourth');
+  }
+
   String _setUrlPhoto(){
     return "https://avatars.mds.yandex.net/get-pdb/2018622/72a562de-8809-408e-ab4f-8454b250768c/s1200?webp=false";
   }
@@ -33,7 +37,7 @@ class BodyWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.0,
+      height: 190.0,
       child: Row(
         children: <Widget>[
           Image.network(
@@ -64,7 +68,15 @@ class BodyWidget extends StatelessWidget{
                       child: Text("Открыть второе окно"),
                       color: Colors.white,
                       textColor: Colors.blue,
-                    )
+                    ),
+                    FlatButton(
+                      onPressed: () {
+                        _showMoreAbout(context);
+                      },
+                      child: Text("Больше инфы"),
+                      color: Colors.black,
+                      textColor: Colors.white,
+                    ),
                  ],
                 )
               ),
