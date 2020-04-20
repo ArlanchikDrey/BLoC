@@ -1,5 +1,5 @@
+import 'package:bloc_pattern/bloc/widgets/BlockTestWidget.dart';
 import 'package:bloc_pattern/widgets/moredetails/GetPosts.dart';
-import 'package:bloc_pattern/widgets/stateful/BlockTestWidget.dart';
 import 'package:flutter/material.dart';
 
 class DetailSecond extends StatelessWidget{
