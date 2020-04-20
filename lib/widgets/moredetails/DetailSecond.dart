@@ -1,4 +1,5 @@
 import 'package:bloc_pattern/widgets/moredetails/GetPosts.dart';
+import 'package:bloc_pattern/widgets/stateful/BlockTestWidget.dart';
 import 'package:flutter/material.dart';
 
 class DetailSecond extends StatelessWidget{
@@ -13,6 +14,8 @@ class DetailSecond extends StatelessWidget{
          child: Column(
            children: <Widget>[
               GetPosts(),
+              Container(height: 30.0),
+              BlockTestWidget(),
               RaisedButton(
                 onPressed: () {Navigator.pop(context);},
                 child: Text("Назад"),
