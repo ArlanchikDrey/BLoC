@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:bloc/bloc.dart';
 import 'package:bloc_pattern/bloc/data/repository/Repository.dart';
 import 'package:bloc_pattern/bloc/events/EventDB.dart';
