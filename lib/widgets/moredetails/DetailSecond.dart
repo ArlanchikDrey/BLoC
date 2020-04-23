@@ -1,3 +1,4 @@
+import 'package:bloc_pattern/bloc/widgets/BlockGetPostsWidget.dart';
 import 'package:bloc_pattern/bloc/widgets/BlockTestWidget.dart';
 import 'package:bloc_pattern/widgets/moredetails/GetPosts.dart';
 import 'package:flutter/material.dart';
@@ -11,17 +12,20 @@ class DetailSecond extends StatelessWidget{
          title: Text("Detail Second")
          ),
        body: Center(
-         child: Column(
-           children: <Widget>[
-              GetPosts(),
-              Container(height: 30.0),
-              BlockTestWidget(),
-              RaisedButton(
-                onPressed: () {Navigator.pop(context);},
-                child: Text("Назад"),
+         child: 
+              Column(
+                children: <Widget>[
+                  GetPosts(),
+                  Container(height: 30.0),
+                  BlockGetPostsWidget(),
+                  Container(height: 30.0),
+                  BlockTestWidget(),
+                  RaisedButton(
+                    onPressed: () {Navigator.pop(context);},
+                    child: Text("Назад"),
+                  )
+                ],
               )
-           ],
-         )
        )
     );
   }

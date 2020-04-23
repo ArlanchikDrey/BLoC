@@ -1,0 +1,3 @@
+enum EventDB{
+  GET,POST,DELETE,UPDATE
+}
