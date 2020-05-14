@@ -8,7 +8,7 @@ void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
   initialRoute: '/',
   routes: {
-    '/': (BuildContext context) => MyList(),
+  '/': (BuildContext context) => MyList(),
     '/second': (BuildContext context) => DetailWidget(),
     '/third': (BuildContext context) => DetailSecond(),
     '/fourth': (BuildContext context) => MoreAbout()
@@ -16,11 +16,12 @@ void main() => runApp(MaterialApp(
   onGenerateRoute: (routeSettings) {
     var path = routeSettings.name.split('/');
 
-    if(path[1] == 'second'){
+  if(path[1] == 'second'){
       return MaterialPageRoute(
-        builder: (context) => DetailWidget(counts:path[2]),
-        settings: routeSettings);
+       builder: (context) => DetailWidget(counts:path[2]),
+       settings: routeSettings);
     }
   },
+  //home: null,
 ));
 
